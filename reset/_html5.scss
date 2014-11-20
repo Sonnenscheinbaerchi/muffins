@@ -1,0 +1,48 @@
+/**
+ * HTML% RESET
+ * -------------------------------------
+ */
+
+/** 
+ * IE 8/9 fixes
+ */
+
+//Corrext "block" display
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+//hidden styling not present
+[hidden] {
+    display: none;
+}
+
+// Correct `inline-block` display 
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Audio 
+ */
+
+// Prevent modern browsers from displaying `audio` without controls.
+// Remove excess height in iOS 5 devices.
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+

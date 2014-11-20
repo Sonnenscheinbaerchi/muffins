@@ -1,0 +1,44 @@
+/**
+ * GRRID CONFIG
+ * -------------------------------------
+ */
+
+/** 
+ * Sets the grids maximum width
+ * @var $grid-max-width (pixels|ems|rems|percentage)
+ */
+$grid-max-width: 1440px !default;
+
+/** 
+ * Sets the gutter with
+ * @var $space (pixels|ems|rems|percentage)
+ */
+$space : 8px !default;
+
+/** 
+ * Sets the number of columns
+ * @var $total-columns (number)
+ */
+$total-columns: 12 !default;
+
+/*
+ * Sets the grids breakpoints an classes
+ * 
+ * To add a new breakpoint you'll need to add an element to the list.
+ * 
+ * You have to use following: 
+ * ( class-name, min-width, max-width).
+ * 
+ * class-name: clasname for the breakpint i.e.: xs, sm, md, lg..
+ * min-width: (pixels|null) the minimum width for the breakpoint 
+ * max-width: (pixels|null) the maximum width for the breakpoint 
+ *  
+ */
+
+$grid-breakpoints: (
+    ('xs', 220px, null),
+    ('sm', 321px, null),
+    ('md', 641px, null),
+    ('lg', 961px, null),
+    ('xl', 1261px, null)
+) !default;

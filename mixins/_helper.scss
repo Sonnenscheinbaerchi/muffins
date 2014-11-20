@@ -1,0 +1,114 @@
+/**
+ * HELPER MIXIN
+ * -------------------------------------
+ */
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+
+
+/**
+ *   Positions
+ */
+
+@mixin position($position, $args) {
+  /**
+  * List of offsets to check for in $args
+  **/
+  $offsets: top right bottom left;
+
+  /**
+   * We loop through $offsets to deal with them one by one
+   */
+  @each $o in $offsets {
+
+    /**
+     * If current offset found in $args
+     * assigns its index to $i
+     * Or `false` if not found
+     */
+    $i: index($args, $o);
+
+    /**
+     * Now we do the verifications
+     * 1. Is the offset listed in $args? (not false)
+     * 2. Is the offset value within the list range?
+     * 3. Is the offset value valid?
+     */
+    @if $i                                      /* 1 */
+    and $i + 1 <= length($args)                 /* 2 */
+    and type-of( nth($args, $i + 1) ) == number /* 3 */ {
+
+        /**
+         * If everything is okay
+         * We assign the according value to the current offset
+         */
+        #{$o}: nth($args, $i + 1);
+    }
+  } 
+
+  position: $position;
+}
+
+
+@mixin absolute($args) {
+    @include position(absolute, $args);
+}
+
+@mixin fixed($args) {
+    @include position(fixed, $args);
+}
+
+@mixin relative($args) {
+    @include position(relative, $args);
+}
+
+/**
+ * Font-sizes
+ */
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size-rem($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin line-heigth-rem($size) {
+ line-height: $size;
+ line-height: calculateRem($size);
+}
+
+/**
+ * generate simple background 
+ */
+
+@mixin background-image($name, $size:false){
+  background-image: url(#{$image-path}/#{$name}.#{$image-extension});
+
+  @if($size){
+      background-size: $size;
+  }
+  @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$image-extension});
+  }
+}
+
+/**
+ * generate alle Placeholder 
+ */
+
+ @mixin placeholder {
+  &::-webkit-input-placeholder,
+  &:-moz-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder {
+    @content
+  }
+ }

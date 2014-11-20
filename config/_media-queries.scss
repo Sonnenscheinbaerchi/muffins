@@ -1,0 +1,13 @@
+/**
+ * Media Queries Config
+ * -------------------------------------
+ */
+
+
+/** 
+ * Disable/Enable the old-browser support for IE < 9
+ * @var $old-browser (bool)
+ * @var $fix-mqs (bool)
+ */
+$old-browser: false !default;
+$fix-mqs: false !default;

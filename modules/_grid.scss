@@ -1,0 +1,20 @@
+/**
+ * GRID MODUL
+ * -------------------------------------
+ */
+
+// Set the container width, and override it for fixed navbars in media queries
+.container {
+  @include container-fixed();
+}
+
+// mobile first defaults
+.row {
+  @include generate-row();
+}
+
+// generate the grid css
+@include generate-grid($grid-breakpoints);
+
+//generate orientation visibiility classes
+@include gernerate-orientation-classes ();

@@ -1,0 +1,42 @@
+/**
+ * Muffins Scss Framework
+ *
+ * A set of tools for quick development of web interfaces.
+ *
+ * @package   Muffins
+ * @author    Stefanie Böhme
+ * @license   http://opensource.org/licenses/MIT MIT
+ * @link
+ * @version   0.0.1
+ */
+
+// Import Compass Core
+@import "compass";
+
+// Import Font Awesome
+// @import "contrib/font-awesome/font-awesome";
+
+// IMPORT RESET FILES
+@import "reset/base";
+@import "reset/html5";
+@import "reset/lists";
+@import "reset/typography";
+
+// IMPORT CONFIG FILES
+@import "config/media-queries";
+@import "config/grid";
+@import "config/helper";
+
+// IMPORT MIXINS FILES (THESE CONTAIN HELPER FUNCTIONS)
+@import "mixins/media-queries";
+@import "mixins/grid";
+@import "mixins/helper";
+
+// IMPORT MODULE DEFINITION FILES
+@import "modules/grid";
+@import "modules/global";
+@import "modules/helper";
+
+
+// IMPORT JS COMPONENTS STYLING
+

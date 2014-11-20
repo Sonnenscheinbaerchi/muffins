@@ -1,0 +1,162 @@
+/**
+ * GRID MIXIN
+ * -------------------------------------
+ */
+
+
+/**
+ * Generate the grid Classes 
+ */
+@mixin generate-grid ($breakpoints) {
+
+	@each $breakpoint in $breakpoints {
+
+		$class-name: nth($breakpoint,1);
+		$min-width: nth($breakpoint,2);
+		$max-width: nth($breakpoint,3);
+
+		@if $min-width and not $max-width {
+			@include fix-media-queries($min-width) {
+				@include generate-grid-classes($class-name);
+				@include generate-grid-helper-classes($class-name);
+				@include generate-grid-visibility-classes($class-name);
+			}
+		}
+
+		@if $min-width and $max-width {
+			@include fix-media-queries($min-width, $max-width) {
+				@include generate-grid-classes($class-name);
+				@include generate-grid-helper-classes($class-name);
+				@include generate-grid-visibility-classes($class-name);
+			}
+		}
+
+		@if not $min-width and $max-width {
+			@include fix-media-queries(false, $max-width) {
+				@include generate-grid-classes($class-name);
+				@include generate-grid-helper-classes($class-name);
+				@include generate-grid-visibility-classes($class-name);
+			}
+		}
+	}
+}
+
+
+/**
+ * Creates all main classes for grid
+ */
+@mixin generate-grid-classes ($class-name) {
+
+  @for $i from 1 through $total-columns {
+    @if($i == $total-columns){
+			.col-#{$class-name}-12 { 
+				width: 100%; 
+			  padding: 0 $space;
+			}
+	  }
+	  
+	  @if($i != $total-columns){
+			.col-#{$class-name}-#{$i} {
+        position: relative;
+			  float: left;
+			  width: percentage(($i/$total-columns)); 
+			  padding: 0 $space;
+			}
+		}
+	}
+}
+
+/**
+ * Creates all helper classes for grid
+ */
+@mixin generate-grid-helper-classes ($class-name) {
+
+  @for $i from 1 through $total-columns {
+
+	  @if($i != $total-columns){
+
+			// Push and pull columns for source order changes
+			.push-#{$class-name}-#{$i} {
+			  left: percentage(($i/$total-columns)); 
+			}
+			.pull-#{$class-name}-#{$i} {
+			  right: percentage(($i/$total-columns)); 
+			}
+			// Offsets
+			.offset-#{$class-name}-#{$i} {
+			  margin-left: percentage(($i/$total-columns)); 
+			}
+		}
+	}
+}
+
+/**
+ * Creates all visibility classes for grid 
+ */
+@mixin generate-grid-visibility-classes ($class-name) {
+
+  .hide-#{$class-name} {
+      display: none;
+  }
+  .show-#{$class-name} {
+      display: inherit ;
+  }
+
+  table.show-#{$class-name} {
+      display: table;
+  }
+  thead.show-#{$class-name} {
+      display: table-header-group;
+  }
+  tbody.show-#{$class-name} {
+      display: table-row-group;
+  }
+  tfoot.show-#{$class-name} {
+      display: table-footer-group;
+  }
+  tr.show-#{$class-name} {
+      display: table-row;
+  }
+  th.show-#{$class-name},
+  td.show-#{$class-name} {
+      display: table-cell;
+  }
+}
+
+/** 
+ * Creates all oriantation classes for grid
+ */
+@mixin gernerate-orientation-classes () {
+
+  @media screen and (orientation: landscape) {
+    .hide-for-landscape {
+      display : none ;
+    }
+  }
+@media screen and (orientation: portrait) {
+    .hide-for-portrait {
+      display : none ;
+    }
+  }
+}
+/**
+ * Centered container element
+ */
+@mixin container-fixed () {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  ($space);
+  padding-right: ($space);
+
+  @include clearfix();
+}
+
+/**
+ *  Creates a wrapper for a series of columns
+ */
+@mixin generate-row ($gutter:($space * 2)) {
+  margin-left:  ($gutter / -2);
+  margin-right: ($gutter / -2);
+
+  @include clearfix();
+}

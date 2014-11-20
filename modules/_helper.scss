@@ -1,0 +1,44 @@
+/**
+ * HELPER MODUL
+ * -------------------------------------
+ */
+ 
+/**
+ * Floating Classes
+ */
+.left{
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clearfix {
+
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+/**
+ * Hide classes
+ */
+.hide {
+  display: none;
+}
+
+/**
+ * Hide text
+ */
+.hide-text{
+    overflow:hidden;
+    text-indent:-9000px;
+    display:block;
+}
+

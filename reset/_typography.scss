@@ -1,0 +1,68 @@
+/**
+ * TYPOGRAPHY RESET 
+ * -------------------------------------
+ */
+
+li, 
+a, 
+h2, 
+h1, 
+h4, 
+h5, 
+h6, 
+h3,
+button{
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  text-decoration: none;
+  line-height: 24px;
+  max-width: 100%;
+  font: {
+    size: 16px;
+    weight: normal;
+  }
+}
+
+p{
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+input[type="text"], input[type="password"], input[type="email"], textarea, select{
+  margin:0;
+  max-width: 100%;
+}
+
+
+fieldset{
+  border: none;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+// Correct font family set oddly in Safari 5 and Chrome.
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+// Set consistent quote types.
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+

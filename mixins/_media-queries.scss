@@ -1,0 +1,48 @@
+/**
+ * Media queries mixin
+ */
+
+
+// Only use this content if we're dealing with old browser (e.g. IE < 9)
+@mixin old-browser {
+    @if $old-browser {
+        @content;
+    }
+}
+
+@mixin fix-media-queries($min-width, $max-width: false) {
+  //Only use for no-mq Styles for older browser
+  @if $fix-mqs {
+    @content;
+  }
+
+  //set styles with mqs
+  @else {
+    @if $max-width and $min-width {
+      @media screen and (min-width: $min-width) and (max-width: $max-width) {
+        @content;
+      }
+    }
+    @if $min-width and not $max-width {
+      @media screen and (min-width: $min-width) {
+        @content;
+      }      
+    }
+    @else {
+      @media screen and (max-width: $max-width) {
+        @content;
+      }
+    }
+  }
+}
+
+
+/**
+ * IE10 Metro responsive
+ * Required for Windows 8 Metro split-screen snapping with IE10
+ * Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+ */
+
+@-ms-viewport{
+  width: device-width;
+}

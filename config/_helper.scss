@@ -1,0 +1,18 @@
+/**
+ * HELPER CONFIG 
+ * -------------------------------------
+ */
+
+/**
+ * Sets the background image values
+ * Path do images
+ * @var $image-path (string)
+ + Extension of images
+ * @var $image-extension (string)
+ * suffix for retina images
+ * @var $image-suffix (string)
+ */
+
+$image-path: '../images' !default;
+$image-extension: 'png' !default;
+$retina-suffix: '@2x';

@@ -1,0 +1,32 @@
+/**
+ * LIST RESET
+ * -------------------------------------
+ */
+
+ul, 
+ol,
+ul ul,
+ol ol{
+  padding:0;
+  max-width: 100%;
+}
+
+li p{
+  line-height:24px;
+  max-width: 100%;
+}
+
+/**
+ * Links
+ */
+
+// Address `outline` inconsistency between Chrome and other browsers.
+a:focus {
+    outline: thin dotted;
+}
+
+// Improve readability when focused and also mouse hovered in all browsers.
+a:active,
+a:hover {
+    outline: 0;
+}
