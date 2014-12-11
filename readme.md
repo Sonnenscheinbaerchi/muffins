@@ -46,22 +46,6 @@ muffins offers various possibilities for a quick start.
 
 The special of muffins is: It is a pure Sass-Framework! We offer no CSS variants, because you should first create your grid individually. The whole interaction of grid, theme and your costum styles works in Sass.
 
-#### The grid
-
-TODO
-
-#### Themes
-
-TODO
-
-### Install Ruby
-
-TODO
-
-### Install Sass
-
-TODO
-
 ### Include the grid and theme in your project
 
 #### Include grid
