@@ -275,7 +275,7 @@ With the offset classes you can add any offset for columns.
 
 -------------------------------
 
-## Browser Kompatibilität
+## Browser compatibility
 
 
 ### Browser without media queries
@@ -455,11 +455,6 @@ input {
 }
 ```
 
----------------------------------
-
-## Icons
-
-TODO
 
 
 ---------------------------------
