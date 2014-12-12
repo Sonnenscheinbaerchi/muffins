@@ -352,7 +352,7 @@ For this, you just have to create a new Sass file and set the variable `$old-bro
 
 ### IE10 "snap" Mode
 
-muffins included a small snippet of code to fix the IE10 "Snap" Mode. More informations you can get a href="http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/"` here.
+muffins included a small snippet of code to fix the IE10 "Snap" Mode. More informations you can get [here](http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/).
 
 ---------------------------------------------------
 
